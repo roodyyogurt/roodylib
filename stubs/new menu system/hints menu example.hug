@@ -1,0 +1,50 @@
+!\ Since the defaultmenu.hug stub file doesn't have a hint menu, here is some
+ example hint code \!
+
+menu_category hint_menu "Hints"
+{
+	in main_menu ! if you want the hint menu to be accessible from the
+		     ! main menu
+}
+
+menu_category studio_hints "Rocket Pictures Studios"
+{
+	in hint_menu
+	hints_available ! hints_available is an alias of option_available
+	{
+	! This hint menu only appears if the applicle room has been
+	!  visited
+		if studiogate is visited
+			return true
+		else
+			return false
+	}
+}
+
+
+! hint_option is a menu_option that automatically runs the Help_Hints
+! routine in its menu_text property
+hint_option studiopass_hints "How do I get on the studio lot?"
+{
+	in studio_hints
+!\      hints_available
+	{
+		! You can also hide individual questions from the current hint
+		! menu by returning false here
+	}  \!
+	hint1
+	{
+		"Movie studio security is on par with Area 51.  To get on
+		the lot, you'll need a pass."
+	}
+	hint2
+	{
+		"There's a studio pass in the envelope that was slipped
+		under the door of your hotel room."
+	}
+	hint3
+	{
+		"Drive to the studio lot.  Make sure you've got the pass
+		handy.  Get out of the car and go north."
+	}
+}
