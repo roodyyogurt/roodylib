@@ -4878,6 +4878,7 @@ to give the highest ranking. \!
 	}
 }
 
+#ifclear NO_SCRIPTS
 
 !\ Roody's note:  hugolib's Script routine was returning
 an incorrect value:  return o * MAX_SCRIPT * 2
@@ -4910,6 +4911,7 @@ replace Script(obj, steps)
 	scriptdata[o * 3 + 2] = steps                   ! total no. of steps
 	return o * MAX_SCRIPT_STEPS * 2
 }
+#endif  ! ifclear NO_SCRIPTS
 
 !\ Roody's note: This version of RunScripts allows scripts to be run with a
 true/false argument (mainly so LoopScripts can be called with a true

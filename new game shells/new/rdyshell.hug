@@ -16,6 +16,9 @@ constant RELEASE "1.0"
 !:: Create an IFID for your game at http://www.tads.org/ifidgen/ifidgen
 !constant IFID "put-IFID here"
 
+! First, let's declare whether we're using Roodylib
+#set USE_ROODYLIB  ! comment out to not use Roodylib
+
 !:: Flags
 #include "flags.hug"   ! edit "flags.hug to fit your game
 
